@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+#define n 10
+int main(){
+	int i,j,num1,num2;
+	int a[n]={12,52,36,84,102,5,6,8,15,33};
+	int t;
+	
+	//增加数据 
+		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+			
+				if(a[i]<a[j]){
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}					
+			}
+		}
+	
+cout<<"请输入你要增加的数据： "<<endl;
+cin>>num1;
+
+	for(i=0;i<n;i++){
+		if(num1<=a[i]) 
+		break;
+		j=i;
+	}
+	
+	for(i=n+1;i>j+1;i--){
+	a[i]=a[i-1];
+	}	
+	a[j+1]=num1;
+		for(i=0;i<n+1;i++){
+			cout<<' '<<a[i];
+		}
+		cout<<endl;
+		
+//************************************
+//删除数据
+
+cin>>num2;
+
+	for(i=0;i<n+1;i++){
+		if(num2<=a[i]) 
+		break;
+	}
+	if(i==n+1){
+		cout<<"error!"<<endl;
+	}
+
+	for(i;i<n;i++){
+		a[i]=a[i+1];
+	}
+	
+for(i=0;i<n;i++){
+			cout<<' '<<a[i];
+		}
+return 0;
+
+ 
+}
+
